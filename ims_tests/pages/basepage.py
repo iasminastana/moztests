@@ -29,7 +29,7 @@ class BasePage:
             self.driver,
             self._IMPLICIT_WAIT_TIME
         ).until(
-            ec.visibility_of_element_located(selector)
+            ec.presence_of_element_located(selector)
         )
         return element
 

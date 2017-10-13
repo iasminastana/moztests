@@ -1,10 +1,10 @@
 from selenium.webdriver.common.by import By
 
 from .basepage import BasePage
-from .dashboard import Dashboard
+from .technology_page import TechnologyPage
 
 
-class Login(BasePage):
+class HomePage(BasePage):
 
     _username_selector = (By.NAME, 'username')
     _password_selector = (By.NAME, 'password')
@@ -14,4 +14,4 @@ class Login(BasePage):
         self.enter_text(self._username_selector, username)
         self.enter_text(self._password_selector, password)
         self.click(self._sign_in_button_selector)
-        return Dashboard(self.driver, self.variables)
+        return TechnologyPage(self.driver, self.variables)

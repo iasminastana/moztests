@@ -6,12 +6,13 @@ class BasePage:
 
     _IMPLICIT_WAIT_TIME = 10
 
-    def __init__(self, driver, variables):
+    def __init__(self, driver, variables, open_url=False):
         self.variables = variables
         self.url = self.variables['url']
         self.driver = driver
         self.driver.maximize_window()
-        self.driver.get(self.url)
+        if open_url:
+            self.driver.get(self.url)
         self.confirm_page()
 
     def confirm_page(self):
